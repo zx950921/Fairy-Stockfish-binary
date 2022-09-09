@@ -44,10 +44,10 @@ jobs:
           sudo apt update
           sudo apt install expect valgrind g++-multilib qemu-user
 
-      - name: Download the used network from the fishtest framework
-        run: |
-          wget https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/xiangqi-83f16c17fe26.nnue
-          wget https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/janggi-85de3dae670a.nnue
+      # - name: Download the used network from the fishtest framework
+      #   run: |
+      #     wget https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/xiangqi-83f16c17fe26.nnue
+      #     wget https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/janggi-85de3dae670a.nnue
 
       - name: Check compiler
         run: |
@@ -68,6 +68,7 @@ jobs:
           ln -sfn $ANDROID_SDK_ROOT/ndk/21.4.7075529 $ANDROID_NDK_ROOT
           export PATH=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
           make clean
+          export LDFLAGS="-static -Wno-unused-command-line-argument"
           make -j2 ARCH=${{ matrix.config.arch }} largeboards=yes build
 
       - name: Show File
