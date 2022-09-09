@@ -48,7 +48,7 @@ jobs:
       - name: Check compiler
         run: |
           export PATH=$PATH:$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin
-          ls $PATH:$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin
+          ls $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin
           $COMPILER -v
       
       - name: Test help target
