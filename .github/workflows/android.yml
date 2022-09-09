@@ -46,7 +46,8 @@ jobs:
 
       - name: Download the used network from the fishtest framework
         run: |
-          make net
+          wget https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/xiangqi-83f16c17fe26.nnue
+          wget https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/janggi-85de3dae670a.nnue
 
       - name: Check compiler
         run: |
