@@ -15,15 +15,15 @@ jobs:
       matrix:
           config:
             - {
-                compiler: aarch64-linux-android30-clang++,
+                compiler: aarch64-linux-android33-clang++,
                 arch: armv8
               }
             - {
-                compiler: armv7a-linux-androideabi30-clang++,
+                compiler: armv7a-linux-androideabi33-clang++,
                 arch: armv7-neon
               }
             - {
-                compiler: armv7a-linux-androideabi30-clang++,
+                compiler: armv7a-linux-androideabi33-clang++,
                 arch: armv7 
               }
 
