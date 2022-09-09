@@ -15,15 +15,15 @@ jobs:
       matrix:
           config:
             - {
-                compiler: aarch64-linux-android33-clang++,
+                compiler: aarch64-linux-android30-clang++,
                 arch: armv8
               }
             - {
-                compiler: armv7a-linux-androideabi33-clang++,
+                compiler: armv7a-linux-androideabi30-clang++,
                 arch: armv7-neon
               }
             - {
-                compiler: armv7a-linux-androideabi33-clang++,
+                compiler: armv7a-linux-androideabi30-clang++,
                 arch: armv7 
               }
 
@@ -37,7 +37,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: ianfab/Fairy-Stockfish
-          ref: fairy_sf_14_0_1_xq
 
       - name: Download required linux packages
         run: |
