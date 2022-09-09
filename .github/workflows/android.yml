@@ -68,7 +68,6 @@ jobs:
           ln -sfn $ANDROID_SDK_ROOT/ndk/21.4.7075529 $ANDROID_NDK_ROOT
           export PATH=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
           make clean
-          export LDFLAGS="-static -Wno-unused-command-line-argument"
           make -j2 ARCH=${{ matrix.config.arch }} largeboards=yes build
 
       - name: Show File
